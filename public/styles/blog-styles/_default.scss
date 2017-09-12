@@ -1,0 +1,62 @@
+// Regular CSS
+
+// .logo-container {
+//   width: 400px;
+//   height: 500px;
+//   background-color: red;
+// }
+//
+// .logo-box {
+//   width: 200px;
+//   height: 200px;
+//   background: blue;
+// }
+//
+// .logo-font {
+//   font-family: cursive;
+// }
+//
+// .logo-container .logo-box .logo-font {
+//   color: white;
+// }
+
+
+// SCSS
+
+//COLORS
+
+$black: #000;
+$dark-grey: #333;
+$light-grey: #666;
+
+
+
+.logo {
+  &-container {
+    width: (400px);
+    height: 500px;
+    background-color: $black;
+
+    .logo-box {
+      .logo-font {
+        color: white;
+      }
+    }
+
+  }
+
+  &-box {
+    width: 200px;
+    height: 200px;
+    background: $light-grey;
+  }
+
+  &-font {
+    font-family: cursive;
+  }
+
+}
+
+a {
+  font-family: "Lato", sans-serif;
+}
