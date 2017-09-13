@@ -1,6 +1,3 @@
-@import "blog-styles/default";
-@import "blog-styles/nav";
-
 // Bootstrap
 // =========
 
@@ -26,3 +23,6 @@
 
 // @import "scss/foundation";
 // @include foundation-everything();
+
+@import "blog-styles/default";
+@import "blog-styles/nav";

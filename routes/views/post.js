@@ -24,7 +24,6 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, result) {
 			locals.data.post = result;
-			locals.data.post.sonia = "SONIA IS A BUMBO";
 			next(err);
 		});
 

@@ -1,23 +1,19 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
-				<hr>
 				<header>
-					<h1>{{data.post.title}}</h1>
-					{{data.post.sonia}}
+					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image crop='fill' aspect_ratio= '16:9' gravity= auto height= 400px }}}" class="img-responsive">{{/if}}
+					<h6>{{data.post.publishedDate}}</h6>
 					<h5>
 						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</h5>
 				</header>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					<h3>{{data.post.publishedDate}}</h3>
-					{{{data.post.content.extended}}}
+					<h1>{{data.post.title}}</h1>
+					<div class="post-content">{{{data.post.content.extended}}}</div>
 				</div>
-			</article>
+			</div>
 		</div>
 	</div>
-</div>
+			</article>
