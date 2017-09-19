@@ -1,76 +1,178 @@
-// Regular CSS
+@import 'breakpoint-mixins';
 
-// .logo-container {
-//   width: 400px;
-//   height: 500px;
-//   background-color: red;
-// }
-//
-// .logo-box {
-//   width: 200px;
-//   height: 200px;
-//   background: blue;
-// }
-//
-// .logo-font {
-//   font-family: cursive;
-// }
-//
-// .logo-container .logo-box .logo-font {
-//   color: white;
-// }
+//DIVS
+
+.post {
+  padding: 0 20px;
+}
+
+@include tablet-up(){
+  .post {
+    padding: 20px;
+      }
+}
+
+.hero-image-container {
+  @include container-fixed($gutter: 0);
+  @include tablet-up(){
+      @include container-fixed($gutter: 100px);
+  }
+}
 
 
-// SCSS
+.article-center-block{
+  @include tablet-up(){
+    @include center-block();
+  }
+}
+
+.article-container {
+  @include desktop-up() {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 (150px)/2;
+  }
+}
+
+.article-sidebar {
+  padding: 20px;
+  font-family: Lato;
+  font-size: 13px;
+  color: $gray;
+  opacity: 0;
+  -webkit-transition: opacity .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+   -moz-transition: opacity .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+    -ms-transition: opacity .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+     -o-transition: opacity .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+        transition: opacity .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+        &.load {
+          opacity: 1;
+        }
+    a {
+      color: rgba(#000000, 0.65);
+      float: right;
+      font-weight: 700;
+      -webkit-transition: .15s;
+       -moz-transition: .15s;
+        -ms-transition: .15s;
+         -o-transition: .15s;
+            transition: .15s;
+      &:hover {
+            color: rgba(#000000, 1);
+            text-decoration: none;
+        }
+        &:visited {
+              text-decoration: none;
+          }
+    }
+}
+
+.category-list {
+  padding-top: 10px;
+  .categories {
+    padding: 0;
+    margin: 0;
+
+    .category-item {
+      display: inline;
+      background: #f0f0f0;
+      padding: 0.8rem 2.3rem;
+      margin-right: 1rem;
+      border-radius: 5px;
+      font-size:13px;
+      &:hover {
+      background: #e6e6e6;
+        }
+      a {
+        text-transform: none;
+        color: $gray;
+        &:hover {
+              text-decoration: none;
+          }
+      }
+    }
+  }
+}
+
+.subscribe-block {
+  @include container-fixed($gutter: 0);
+  @include tablet-up(){
+      @include container-fixed($gutter: 100px);
+    }
+  background-color: #F7F7F7;
+  height: 340px;
+  text-align: center;
+  padding: 15px 2rem;
+  margin-top: 50px;
+  @include tablet-up(){
+      padding: 15px 9rem;
+      height: 245px;
+  }
+    input{
+      font-family: 'Lato';
+      font-size: 14px;
+      color: $gray-light;
+      padding: 12px 15px;
+      margin-top: 10px;
+      border: 0px;
+      border-radius: 3px;
+      width: 26.5rem;
+      -webkit-box-shadow: 0 -1px 1px 0 rgba(0,0,0,0.01), 0 1px 5px 0 rgba(0,0,0,0.12), 0 2px 1px -2px rgba(0,0,0,0.1);
+      box-shadow: 0 -1px 1px 0 rgba(0,0,0,0.01), 0 1px 5px 0 rgba(0,0,0,0.12), 0 2px 1px -2px rgba(0,0,0,0.1);
+      @include tablet-up(){
+        width: 28rem;
+        border-radius: 3px 0 0 3px;
+        display: inline-block;
+      }
+    }
+    button {
+      display: inline-block;
+      background-color: #607D8B;
+      border: 0px;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      width: 26.5rem;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 5px;
+      -webkit-transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+       -moz-transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+        -ms-transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+         -o-transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+            transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+      @include tablet-up(){
+      border-radius: 1px 5px 5px 1px;
+      width: 12rem;
+      padding: 12px;
+      }
+      &:hover {
+      background-color: #516a77;
+        }
+    }
+}
+
+
+// TYPOGRAPHY
 
 h6, .h6 {
   font-weight: 500;
   color: #888;
+  margin-top: 10px;
 }
 
 h1, .h1{
   line-height: 1.22;
+  margin-bottom: 20px;
 }
 
 h2, .h2{
   line-height: 1.17;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 a {
   font-family: "Lato", sans-serif;
-}
-
-
-//COLORS
-
-$black: #000;
-$dark-grey: #333;
-$light-grey: #666;
-
-
-
-.logo {
-  &-container {
-    width: (400px);
-    height: 500px;
-    background-color: $black;
-
-    .logo-box {
-      .logo-font {
-        color: white;
-      }
-    }
-
-  }
-
-  &-box {
-    width: 200px;
-    height: 200px;
-    background: $light-grey;
-  }
-
-  &-font {
-    font-family: cursive;
-  }
-
+  text-transform: uppercase;
 }

@@ -78,6 +78,11 @@
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
 		--}}
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script>
+		setTimeout(function(){
+document.getElementById("articleSidebar").className += " load";
+		 }, 400);
+		</script>
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

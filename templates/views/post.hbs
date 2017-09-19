@@ -1,19 +1,44 @@
-			<article>
-				<header>
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image crop='fill' aspect_ratio= '16:9' gravity= auto height= 400px }}}" class="img-responsive">{{/if}}
-					<h6>{{data.post.publishedDate}}</h6>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-					</h5>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-				<div class="post">
-					<h1>{{data.post.title}}</h1>
-					<div class="post-content">{{{data.post.content.extended}}}</div>
+<article>
+	<div class="article-container">
+		<header>
+			<div class="hero-image-container">
+				{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image crop='fill' aspect_ratio= '16:9' gravity= 'auto' height= 400px }}}" class="img-responsive">{{/if}}
+			</div>
+		</header>
+		<div class="container-fluid">
+			<div class="row no-gutters article-center-block">
+				<div class="col-lg-3 visible-lg-block">
+					<div class="article-sidebar" id="articleSidebar">
+					<h4>About the Blog</h4>
+					<p>I've been there. My folks were always on me to groom myself and wear underpants. What am I, the pope? Fetal stemcells, aren't those controversial? Ah, yes! John Quincy Adding Machine.  He struck a chord with the voters when he pledged not to go on a killing spree.</p> <a href="#">Read more</a>
+					</div>
+			</div>
+				<div class="col-sm-12 col-md-12 col-lg-9">
+					<div class="post">
+						<h6>{{data.post.publishedDate}}</h6>
+						<h1>{{data.post.title}}</h1>
+						<div class="post-content">
+							{{{data.post.content.extended}}}
+						</div>
+						<div class="category-list">
+							<ul class="categories">
+								{{#each data.post.categories}}
+									<li class="category-item"><a href="/blog/{{key}}">{{name}}</a></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+				<div class="visible-sm-block">
+					<div class="visible-md-block">
+						<div class="subscribe-block">
+							<h3>Get updates on posts</h3>
+							<p>This opera's as lousy as it is brilliant! Your lyrics lack subtlety.</p>
+							<form><input type="text" name="email" value="Enter your email address"><button>Subscribe</button></form>
+						</div>
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>
 	</div>
-			</article>
+</article>
