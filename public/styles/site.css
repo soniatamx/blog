@@ -5899,6 +5899,21 @@ a {
       .hero-image-container:after {
         clear: both; } }
 
+.full-width-mobile {
+  margin-left: -15px;
+  margin-right: -15px; }
+  @media screen and (min-width: 576.1px) {
+    .full-width-mobile {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 50px;
+      padding-right: 50px; }
+      .full-width-mobile:before, .full-width-mobile:after {
+        content: " ";
+        display: table; }
+      .full-width-mobile:after {
+        clear: both; } }
+
 @media screen and (min-width: 576.1px) {
   .article-center-block {
     display: block;
