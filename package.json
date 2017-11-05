@@ -23,6 +23,6 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node keystone.js"
+    "start": "mongod --dbpath /Users/sonia/database/ & node keystone.js"
   }
 }

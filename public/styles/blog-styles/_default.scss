@@ -1,15 +1,58 @@
 @import 'breakpoint-mixins';
 
+a {
+  font-size: 13px;
+  color: rgba(#000000, 0.65);
+  font-weight: 700;
+  &:hover {
+        color: rgba(#000000, 1);
+        text-decoration: underline;
+    }
+    &:visited {
+          text-decoration: none;
+      }
+}
+
 //DIVS
 
 .post {
   padding: 0 20px;
+  @include tablet-up(){
+    padding: 20px;
+  }
 }
 
-@include tablet-up(){
-  .post {
-    padding: 20px;
-      }
+.home-feed{
+  h2, .h2{
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  ul, li{
+    list-style: none;
+    display: inline-block;
+    float: left;
+    padding: 2px 3px;
+  }
+  ul > li {
+  padding-right: 20px;
+}
+ul > li > a:hover{
+  text-decoration: none;
+}
+.selected{
+  border-bottom: 1px solid #222;
+}
+  padding: 0;
+  margin: 5px -15px;
+  @include tablet-up(){
+    padding: 0 20px;
+    margin: 15px 0;
+  }
+  img{
+    @include mobile-up(){
+      width: 100%
+    }
+  }
 }
 
 .hero-image-container {
@@ -49,22 +92,11 @@
           opacity: 1;
         }
     a {
-      color: rgba(#000000, 0.65);
       float: right;
-      font-weight: 700;
-      -webkit-transition: .15s;
-       -moz-transition: .15s;
-        -ms-transition: .15s;
-         -o-transition: .15s;
-            transition: .15s;
-      &:hover {
-            color: rgba(#000000, 1);
-            text-decoration: none;
-        }
-        &:visited {
-              text-decoration: none;
-          }
-    }
+      }
+      img{
+        margin-bottom: 15px;
+      }
 }
 
 .category-list {
@@ -84,6 +116,7 @@
       background: #e6e6e6;
         }
       a {
+        font-weight: 500;
         text-transform: none;
         color: $gray;
         &:hover {
@@ -98,17 +131,20 @@
   @include container-fixed($gutter: 0);
   @include tablet-up(){
       @include container-fixed($gutter: 100px);
-    }
+  }
+  margin: 0 auto;
   background-color: #F7F7F7;
   height: 340px;
   text-align: center;
   padding: 15px 2rem;
   margin-top: 50px;
   @include tablet-up(){
-      padding: 15px 9rem;
+      padding: 15px 4rem;
       height: 245px;
+      margin: 30px 20px;
   }
-    input{
+
+input{
       font-family: 'Lato';
       font-size: 14px;
       color: $gray-light;
@@ -116,10 +152,15 @@
       margin-top: 10px;
       border: 0px;
       border-radius: 3px;
-      width: 26.5rem;
+      width: 27rem;
       -webkit-box-shadow: 0 -1px 1px 0 rgba(0,0,0,0.01), 0 1px 5px 0 rgba(0,0,0,0.12), 0 2px 1px -2px rgba(0,0,0,0.1);
       box-shadow: 0 -1px 1px 0 rgba(0,0,0,0.01), 0 1px 5px 0 rgba(0,0,0,0.12), 0 2px 1px -2px rgba(0,0,0,0.1);
       @include tablet-up(){
+        width: 26.5rem;
+        border-radius: 3px 0 0 3px;
+        display: inline-block;
+      }
+      @include desktop-up(){
         width: 28rem;
         border-radius: 3px 0 0 3px;
         display: inline-block;
@@ -132,7 +173,7 @@
       color: #fff;
       font-family: 'Lato', sans-serif;
       font-size: 15px;
-      width: 26.5rem;
+      width: 27rem;
       margin-top: 12px;
       padding: 10px;
       border-radius: 5px;
@@ -142,9 +183,9 @@
          -o-transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
             transition: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
       @include tablet-up(){
-      border-radius: 1px 5px 5px 1px;
-      width: 12rem;
-      padding: 12px;
+        border-radius: 1px 5px 5px 1px;
+        width: 12rem;
+        padding: 12px;
       }
       &:hover {
       background-color: #516a77;
@@ -152,6 +193,76 @@
     }
 }
 
+.about-container {
+  margin-top: 50px;
+
+}
+
+.no-left-padding{
+  padding-left: 0;
+}
+
+.about-image {
+  padding: 0;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include tablet-up {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+
+}
+
+.about-text{
+  padding: 0px 15px;
+  font-size: 15px;
+  a {
+    float: right;
+  }
+  @include tablet-up() {
+    padding: 0px 50px;
+  }
+}
+
+#footer{
+  background-color: #455A64;
+  color: #fff;
+  padding: 40px 3rem;
+  margin-top: 40px;
+  float: left;
+  width: 100%;
+  @include tablet-up {
+  padding: 30px 10rem;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 25px auto 0 auto;
+    @include tablet-up{
+    margin: 0px auto;
+    }
+  }
+  ul > li {
+    display: inline-block;
+    padding-right: 2.5rem;
+    @include tablet-up {
+    padding-right: 25px;
+    }
+  }
+  a {
+    color: #fff;
+    font-weight: 500;
+  }
+  p {
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+  }
+}
 
 // TYPOGRAPHY
 

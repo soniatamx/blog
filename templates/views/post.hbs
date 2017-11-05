@@ -10,6 +10,7 @@
 				<div class="col-lg-3 visible-lg-block">
 					<div class="article-sidebar" id="articleSidebar">
 					<h4>About the Blog</h4>
+					<img src="http://via.placeholder.com/190x135"><br>
 					<p>I've been there. My folks were always on me to groom myself and wear underpants. What am I, the pope? Fetal stemcells, aren't those controversial? Ah, yes! John Quincy Adding Machine.  He struck a chord with the voters when he pledged not to go on a killing spree.</p> <a href="#">Read more</a>
 					</div>
 			</div>
@@ -20,25 +21,31 @@
 						<div class="post-content">
 							{{{data.post.content.extended}}}
 						</div>
-						<div class="category-list">
+						{{!-- <div class="category-list">
 							<ul class="categories">
 								{{#each data.post.categories}}
 									<li class="category-item"><a href="/blog/{{key}}">{{name}}</a></li>
 								{{/each}}
 							</ul>
-						</div>
+						</div> --}}
 					</div>
-				<div class="visible-sm-block">
-					<div class="visible-md-block">
-						<div class="subscribe-block">
-							<h3>Get updates on posts</h3>
-							<p>This opera's as lousy as it is brilliant! Your lyrics lack subtlety.</p>
-							<form><input type="text" name="email" value="Enter your email address"><button>Subscribe</button></form>
-						</div>
+					<div class="subscribe-block">
+						<h3>Get updates on posts</h3>
+						<p>This opera's as lousy as it is brilliant! Your lyrics lack subtlety.</p>
+						<form><input type="text" name="email" placeholder="Enter your email address"><button>Subscribe</button></form>
 					</div>
-				</div>
-				</div>
 			</div>
 		</div>
 	</div>
 </article>
+<div class="about-container hidden-lg">
+		<div class="col-xs-12 col-sm-5 about-image">
+			<img src="http://via.placeholder.com/400x300">
+		</div>
+		<div class="about-text">
+		<div class="col-xs-12 col-sm-7">
+			<h3>About the Blog</h3>
+			<p>I've been there. My folks were always on me to groom myself and wear underpants. What am I, the pope? Fetal stemcells, aren't those controversial? Ah, yes! John Quincy Adding Machine.  He struck a chord with the voters when he pledged not to go on a killing spree.</p><p><a href="#">Read more</a></p>
+		</div>
+</div>
+</div>
