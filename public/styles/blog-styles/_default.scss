@@ -1,5 +1,9 @@
 @import 'breakpoint-mixins';
 
+body{
+  background-color: rgb(255, 255, 251);
+}
+
 a {
   font-size: 13px;
   color: rgba(#000000, 0.65);
@@ -22,10 +26,54 @@ a {
   }
 }
 
-.home-feed{
+.home-feed {
   h2, .h2{
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 20px;
+  }
+
+  a, a:visited {
+    &.feed-link {
+      text-transform: none;
+      color:inhert;
+      text-decoration: none;
+
+    }
+    &:hover {
+      .feed-card{
+        h2 {
+          text-decoration: underline;
+        }
+      }
+    }
+    .feed-item {
+      @include tablet-up(){
+        padding: 25px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      }
+    .feed-card {
+      h2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 28px;
+        line-height: 33px;
+        color: #333333;
+      }
+
+
+      p {
+        font-family: 'Lora', serif;
+        font-size: 17px;
+        line-height: 30px;
+        color: #4f4f4f;
+        font-weight: normal;
+      }
+    }
+
+  }
+}
+
+  h6, .h6{
+    margin-top: 15px;
   }
   ul, li{
     list-style: none;
@@ -55,6 +103,11 @@ ul > li > a:hover{
   }
 }
 
+.feed-item{
+  margin-bottom: 45px;
+  float: left;
+}
+
 .hero-image-container {
   @include container-fixed($gutter: 0);
   @include tablet-up(){
@@ -66,7 +119,7 @@ ul > li > a:hover{
   margin-left: -15px;
   margin-right: -15px;
     @include tablet-up(){
-    @include container-fixed($gutter: 100px);
+    @include container-fixed($gutter: 0px);
   }
 }
 
@@ -135,20 +188,22 @@ ul > li > a:hover{
 }
 
 .subscribe-block {
-  @include container-fixed($gutter: 0);
-  @include tablet-up(){
-      @include container-fixed($gutter: 100px);
-  }
-  margin: 0 auto;
+  // @include container-fixed($gutter: 0);
+  // @include tablet-up(){
+  //     @include container-fixed($gutter: 100px);
+  // }
   background-color: #F7F7F7;
   height: 340px;
   text-align: center;
   padding: 15px 2rem;
-  margin-top: 50px;
+  margin-top: 30px;
+  float: left;
+  width: 100%;
   @include tablet-up(){
+      margin-top: 10px;
       padding: 15px 4rem;
       height: 245px;
-      margin: 30px 20px;
+      // margin: 30px 20px;
   }
 
 input{
@@ -293,4 +348,11 @@ h2, .h2{
 a {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
+}
+
+
+//HELPERS
+
+.float-right{
+  float: right;
 }

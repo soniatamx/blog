@@ -1,7 +1,7 @@
 {{!< default}}
 <div class="container">
 	<div class="hero-image-container full-width">
-		<img class="img-responsive" src="http://res.cloudinary.com/keystone-demo/image/upload/ar_16:9,c_fill,g_auto/ziclxzxmq0yxaijkmir1.png">
+		<img class="img-responsive" src="http://res.cloudinary.com/keystone-demo/image/upload/ar_16:8,c_fill,g_auto/ziclxzxmq0yxaijkmir1.png">
 	</div>
 	<div class="container-fluid">
 		<div class="row no-gutters article-center-block">
@@ -18,12 +18,24 @@
 						<li><a class="selected" href="#">Latest</a></li>
 						<li><a href="#">Popular</a></li>
 					</ul>
-					<div class="full-width-mobile"><img class="img-responsive" src="/images/post-1.png"></div>
-					<h6>29 August, 2017</h6>
-					<h2>h1 — This is a main headline</h2>
-						<p>
-							Not only does Baato come equipped with cutting edge snacking technology its also equipped with NFC, voice activation, motion sensors, GPS, airplane mode…
-						</p>
+
+					{{# each data.posts.results}}
+					<a class="feed-link" href="{{postUrl slug}}">
+						<div class="full-width-mobile">
+							<img class="img-responsive" src="{{{cloudinaryUrl image crop='fill' aspect_ratio='16:6' gravity='center' height=500 }}}">
+						</div>
+						<div class="feed-item">
+							<div class="feed-card">
+								<h6>{{ publishedDate }}</h6>
+								<h2>{{ title }}</h2>
+									<p>
+										{{{ content.brief }}}
+									</p>
+							</div>
+						</div>
+					</a>
+					{{/each}}
+
 				</div>
 				<div class="subscribe-block">
 					<h3>Get updates on posts</h3>

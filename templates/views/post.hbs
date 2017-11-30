@@ -2,7 +2,9 @@
 	<div class="article-container">
 		<header>
 			<div class="hero-image-container">
-				{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image crop='fill' aspect_ratio= '16:9' gravity= 'auto' height= 400px }}}" class="img-responsive">{{/if}}
+				{{#if data.post.image}}
+					<img src="{{{cloudinaryUrl data.post.image crop='fill' aspect_ratio= '16:8' gravity= 'center' height= 400px }}}" class="img-responsive">
+				{{/if}}
 			</div>
 		</header>
 		<div class="container-fluid">
