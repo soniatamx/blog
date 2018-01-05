@@ -5836,9 +5836,6 @@ button.close {
   max-width: 100%;
   height: auto; }
 
-body {
-  background-color: #fffffb; }
-
 a {
   font-size: 13px;
   color: rgba(0, 0, 0, 0.65);
@@ -6131,7 +6128,15 @@ a {
 .float-right {
   float: right; }
 
+.navbar-header {
+  width: 100%;
+  padding: 0 0 25px 0; }
+
+.navbar-toggle {
+  z-index: 99; }
+
 .navbar-default .navbar-brand {
+  float: none;
   color: #000;
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -6140,8 +6145,10 @@ a {
   .navbar-default .navbar-brand-container {
     float: left;
     width: 100%;
-    display: inline-block;
-    margin: 0 auto; }
+    display: inline-block; }
+    @media screen and (max-width: 576px) {
+      .navbar-default .navbar-brand-container {
+        margin-top: -45px; } }
     .navbar-default .navbar-brand-container .navbar-brand {
       text-align: center; }
 
@@ -6151,8 +6158,14 @@ a {
     width: 100%;
     display: inline-block;
     margin: 0 auto; }
-    .navbar-container .navbar-container > ul {
-      text-align: center; } }
+    .navbar-container .navbar-nav {
+      float: none;
+      margin: auto; }
+    .navbar-container ul.nav {
+      text-align: center; }
+      .navbar-container ul.nav li {
+        float: none;
+        display: inline-block; } }
 
 .navbar-default {
   background-color: #fff;
