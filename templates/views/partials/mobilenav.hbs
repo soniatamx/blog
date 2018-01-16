@@ -1,1 +1,23 @@
-<h1>sefsef</h1>
+<div class="mobile-nav show">
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-box">
+      <div class="mobile-nav-container">
+        <div class="mobile-nav-close">
+          ×
+        </div>
+        <div class="mobile-nav-items">
+          <h4> なーなに？はやい！</h4>
+          <ul>
+            {{# each navLinks}}
+              <li>
+                <a href="{{ href }}">{{ label }}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile Navigation Below -->
+
+</div>
